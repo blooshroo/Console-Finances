@@ -86,3 +86,36 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+// // Total Months:
+var totalMonths = finances.length;
+
+// * The net total amount of Profit/Losses over the entire period:
+let netTotal = 0;
+for (let value of finances){
+    netTotal += value[1]
+}
+
+// * The average of the **changes** in Profit/Losses over the entire period:
+let totalChange = 0;
+// start at index 1
+for (let i = 1; i < finances.length; i++) {
+    totalChange += finances[i][1] - finances[i - 1][1]
+  } 
+var averageTotalChange = Math.round((totalChange/ (totalMonths - 1)) * 100) / 100
+
+// * The greatest increase & decrease in Profit/Losses (date and amount) over the entire period:
+let greatestIncrease = ["initial", 0];
+let greatestDecrease = ["initial", 0];
+for (let i = 1; i < finances.length; i++) {
+    let difference = finances[i][1] - finances[i - 1][1];
+    if(difference > greatestIncrease[1]){
+        greatestIncrease = [finances[i][0], difference];
+    }
+    if(difference < greatestDecrease[1]){
+        greatestDecrease = [finances[i][0], difference];
+    }
+  };
+  
+// CONSOLE LOG Entire Financial Analysis together with line breaks:
+console.log(console.log("Financial Analysis" + "\n" + "------------------" + "\n" + "Total Months: " + totalMonths  + "\n" + "Total: $" + netTotal + "\n" + "Average Change: " + averageTotalChange + "\n" + "Greatest Increase in Profits/Losses: " + greatestIncrease[0] + " ($" + greatestIncrease[1] + ")" + "\n" + "Greatest Decrease in Profits/Losses: " + greatestDecrease[0] + " ($" + greatestDecrease[1] + ")"));

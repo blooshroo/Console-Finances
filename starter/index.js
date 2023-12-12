@@ -87,7 +87,7 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-// // Total Months:
+// Total Months:
 var totalMonths = finances.length;
 
 // * The net total amount of Profit/Losses over the entire period:
@@ -118,4 +118,10 @@ for (let i = 1; i < finances.length; i++) {
   };
   
 // CONSOLE LOG Entire Financial Analysis together with line breaks:
-console.log(console.log("Financial Analysis" + "\n" + "------------------" + "\n" + "Total Months: " + totalMonths  + "\n" + "Total: $" + netTotal + "\n" + "Average Change: " + averageTotalChange + "\n" + "Greatest Increase in Profits/Losses: " + greatestIncrease[0] + " ($" + greatestIncrease[1] + ")" + "\n" + "Greatest Decrease in Profits/Losses: " + greatestDecrease[0] + " ($" + greatestDecrease[1] + ")"));
+console.log("Financial Analysis" + "\n" + 
+"------------------" + "\n" + 
+"Total Months: " + totalMonths  + "\n" + 
+"Total: $" + netTotal + "\n" + 
+"Average Change: " + averageTotalChange + "\n" + 
+"Greatest Increase in Profits/Losses: " + greatestIncrease[0] + " ($" + greatestIncrease[1] + ")" + "\n" + 
+"Greatest Decrease in Profits/Losses: " + greatestDecrease[0] + " ($" + greatestDecrease[1] + ")");
